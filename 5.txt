@@ -1,0 +1,43 @@
+ mysql -u root 
+CREATE DATABASE count;
+
+CREATE TABLE tb_caleg(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    id_partai INT(11),
+    earned_vote INT(50)
+  );
+
+  CREATE TABLE tb_partai(
+  	id INT AUTO_INCREMENT PRIMARY KEY,
+  	name VARCHAR(100)
+  );
+  
+  INSERT INTO tb_caleg(name,id_partai,earned_vote) VALUES ('Sera','2','100');
+  INSERT INTO tb_caleg(name,id_partai,earned_vote) VALUES ('Dobleh','1','99');
+
+  INSERT INTO tb_partai(name) VALUES ('Cilacap Santai');
+  INSERT INTO tb_partai(name) VALUES ('Cilacap Sejahtera');
+
+  INSERT INTO tb_partai(name) VALUES ('Cilacap Aman');
+
+  UPDATE tb_partai SET name = 'Cilacap Makmur' WHERE id = '2';
+
+  INSERT INTO tb_caleg(name,id_partai,earned_vote) VALUES ('Kabur','3','0');
+  INSERT INTO tb_caleg(name,id_partai,earned_vote) VALUES ('Astina','3','0');
+
+  UPDATE tb_caleg SET earned_vote = '69' WHERE id = '3';
+  UPDATE tb_caleg SET earned_vote = '21' WHERE id = '4';
+
+  UPDATE tb_caleg SET name='lsBOS',id_partai='2',earned_vote='70' WHERE id='1';
+
+  DELETE FROM tb_caleg WHERE id='4';
+
+  SELECT * FROM tb_caleg tc JOIN tb_partai tp ON tc.id = tp.id;
+
+  SELECT * FROM tb_caleg tc JOIN tb_partai tp ON tc.id = tp.id WHERE tc.id='3';
+
+
+
+
+
